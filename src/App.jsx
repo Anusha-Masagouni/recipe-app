@@ -1,35 +1,44 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// import './App.css'
+import { BrowserRouter } from "react-router-dom";
+import Category from "./components/Category";
+import Pages from "./pages/Pages";
+import Search from "./components/Search";
+import styled from "styled-components";
+import { GiKnifeFork } from 'react-icons/gi'
 
-function App() {
-  const [count, setCount] = useState(0)
+const Logo = styled.div`
+text-decoration: none;
+font-size: 1.5rem;
+font-weight: 400;
+font-family: 'Lobster Two', cursive;
+`
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+const Nav = styled.div`
+padding: 4rem 0rem;
+display: flex;
+justify-content: flex-start;
+align-items: center;
+cursor: pointer;
+
+svg{
+  font-size: 2rem;
 }
+`
 
-export default App
+const App = () => {
+  return (
+    <div className="App">
+      <BrowserRouter>
+      <Nav>
+        <GiKnifeFork />
+        <Logo to="/">Delicious </Logo>
+      </Nav>
+        <Search />
+        <Category />
+        <Pages />
+      </BrowserRouter>
+    </div>
+  );
+};
+
+export default App;
