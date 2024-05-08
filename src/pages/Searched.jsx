@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-// import { IoThermometer } from "react-icons/io5";
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
 
@@ -34,11 +33,15 @@ const Searched = () => {
   const getSearched = async (name) => {
     //fectching data
     const data = await fetch(
-      `https://api.spoonacular.com/recipes/complexSearch?apiKey=71ad04d259de48b2898e6bb88844f2c6&query=${name}`
+      `https://api.spoonacular.com/recipes/complexSearch?apiKey=611d8782682c4b18bca80dd3f940affb&query=${name}`
     );
     const recipes = await data.json();
+
+    // localStorage.setItem("recipe", JSON.stringify(recipes.results));
+
     setSearchedRecipes(recipes.results);
-    console.log(recipes)
+    // console.log(recipes.results);
+    console.log(recipes);
   };
 
   return (

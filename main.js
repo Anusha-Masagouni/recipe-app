@@ -9,7 +9,6 @@ const FormStyle = styled.form`
     position: relative;
     width: 100%;
   }
-
   input {
     border: none;
     background: linear-gradient(35deg, #494949, #313131);
@@ -17,7 +16,6 @@ const FormStyle = styled.form`
     color: white;
     padding: 1rem 3rem;
     border-radius: 1rem;
-    // outline: none;
     width: 100%;
   }
   svg {

@@ -1,41 +1,54 @@
 // import './App.css'
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import Category from "./components/Category";
-import Pages from "./pages/Pages";
+
 import Search from "./components/Search";
+import Home from "./pages/Home";
+import Cuisine from "./pages/Cuisine";
+import Searched from "./pages/Searched";
+import Recipe from "./pages/Recipe";
+
 import styled from "styled-components";
-import { GiKnifeFork } from 'react-icons/gi'
+// import { KnifeFork } from "react-icons/gi";
 
 const Logo = styled.div`
-text-decoration: none;
-font-size: 1.5rem;
-font-weight: 400;
-font-family: 'Lobster Two', cursive;
-`
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-family: "Lobster Two", cursive;
+`;
 
-const Nav = styled.div`
-padding: 4rem 0rem;
-display: flex;
-justify-content: flex-start;
-align-items: center;
-cursor: pointer;
+const NavBar = styled.div`
+  padding: 4rem 0rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  cursor: pointer;
 
-svg{
-  font-size: 2rem;
-}
-`
+  svg {
+    font-size: 2rem;
+  }
+`;
 
 const App = () => {
   return (
     <div className="App">
       <BrowserRouter>
-      <Nav>
-        <GiKnifeFork />
-        <Logo to="/">Delicious </Logo>
-      </Nav>
+
+      <NavBar>
+        {/* <KnifeFork /> */}
+        <Link to="/">Delicious </Link>
+      </NavBar>
+      
         <Search />
         <Category />
-        <Pages />
+
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/cuisine/:type" element={<Cuisine />} />
+          <Route path="/searched/:search" element={<Searched />} />
+          <Route path="/recipe/:id" element={<Recipe />} />
+        </Routes>
       </BrowserRouter>
     </div>
   );

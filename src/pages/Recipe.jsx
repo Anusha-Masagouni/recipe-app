@@ -44,14 +44,16 @@ const Recipe = () => {
 
   useEffect(() => {
     fetchDetails();
-  }, [params.name]);
+  }, [params.id]);
 
   const fetchDetails = async () => {
     const data = await fetch(
-      `https://api.spoonacular.com/recipes/${params.name}/information?apiKey=71ad04d259de48b2898e6bb88844f2c6`
+      `https://api.spoonacular.com/recipes/${params.id}/information?apiKey=611d8782682c4b18bca80dd3f940affb`
     );
 
     const detailData = await data.json();
+
+    // localStorage.setItem("recipe", JSON.stringify(detailData));
 
     setDetails(detailData);
     console.log(detailData);
@@ -91,7 +93,7 @@ const Recipe = () => {
           </ul> */}
         
         
-        {/* {activeTab === "instructions" && (
+        {activeTab === "instructions" && (
           <div>
             <h3 dangerouslySetInnerHTML={{ __html: details.summary }}></h3>
 
@@ -99,13 +101,13 @@ const Recipe = () => {
           </div>
         )}
 
-        {activeTab === "ingredients" && (
+        {activeTab === "ingredients" && details.extendedIngredients && (
           <ul>
             {details.extendedIngredients.map((ingredients, index) => {
               return <li key={index}>{ingredients.original}</li>;
             })}
           </ul>
-        )} */}
+        )}
       </Info>
     </DetailWrapper>
   );

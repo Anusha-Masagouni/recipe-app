@@ -61,9 +61,9 @@ const Category = () => {
             <h4>American</h4>
         </SLink>
 
-        <SLink to={'/cuisine/Thai'}>
+        <SLink to={'/cuisine/Indian'}>
             <GiNoodles />
-            <h4>Thai</h4>
+            <h4>Indian</h4>
         </SLink>
 
         <SLink to={'/cuisine/Japanese'}>

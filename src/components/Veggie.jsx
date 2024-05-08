@@ -74,7 +74,7 @@ const Veggie = () => {
       } else {
 
         // eslint-disable-next-line no-undef
-        const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=71ad04d259de48b2898e6bb88844f2c6&number=9&tags=vegetarian`);
+        const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=611d8782682c4b18bca80dd3f940affb&number=9&tags=vegetarian`);
         const data = await api.json()
         // console.log(data)
         // console.log(data.recipes)
@@ -88,7 +88,7 @@ const Veggie = () => {
 
       }
     }
-
+    // console.log(data.recipes);
   return (
     <div>
           <Wrapper>

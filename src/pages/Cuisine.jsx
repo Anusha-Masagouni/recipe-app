@@ -35,9 +35,11 @@ const Cuisine = () => {
   const getCuisine = async (name) => {
     //fetching the cuisine data from API
     const data = await fetch(
-      `https://api.spoonacular.com/recipes/complexSearch?apiKey=71ad04d259de48b2898e6bb88844f2c6&cusine=${name}`
+      `https://api.spoonacular.com/recipes/complexSearch?apiKey=611d8782682c4b18bca80dd3f940affb&cusine=${name}`
     );
     const recipes = await data.json();
+
+    // localStorage.setItem("cuisine", JSON.stringify(recipes.results));
 
     setCuisine(recipes.results);
   };
