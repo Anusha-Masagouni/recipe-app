@@ -19,6 +19,7 @@ const Card = styled.div`
   h4 {
     text-align: center;
     padding: 1rem;
+    font-size: 1rem;
   }
 `;
 
@@ -35,7 +36,7 @@ const Cuisine = () => {
   const getCuisine = async (name) => {
     //fetching the cuisine data from API
     const data = await fetch(
-      `https://api.spoonacular.com/recipes/complexSearch?apiKey=611d8782682c4b18bca80dd3f940affb&cusine=${name}`
+      `https://api.spoonacular.com/recipes/complexSearch?apiKey=611d8782682c4b18bca80dd3f940affb&cuisine=${name}`
     );
     const recipes = await data.json();
 

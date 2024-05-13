@@ -8,11 +8,13 @@ const FormStyle = styled.form`
   div {
     position: relative;
     width: 100%;
+    box-shadow: 0px 6px 10px 0px #3b3a3a;
+    border-radius: 1rem;
   }
 
   input {
     border: none;
-    background: linear-gradient(35deg, #494949, #313131);
+    background: linear-gradient(25deg, #B3C8CF, #00e3ff, #B3C8CF);
     font-size: 1.5rem;
     color: white;
     padding: 1rem 3rem;

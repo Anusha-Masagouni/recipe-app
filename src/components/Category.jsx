@@ -15,26 +15,28 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 border-radius: 50%;
-margin-right: 2rem;
+margin-right: 1rem;
 text-decoration: none;
-background: linear-gradient(35deg, #494949 #313131);
-background: #313131;
-width: 6rem;
-height: 6rem;
+// background: linear-gradient(35deg, #10439F, #68D2E8);
+background: #10439F;
+width: 8rem;
+height: 8rem;
 cursor: pointer;
 transform: scale(0.8);
 
 h4 {
     color: #ffff;
-    font-size: 1rem;
+    font-size: 1.1rem;
 }
 
  svg {
     color: #ffff;
-    font-size: 1.5rem;
+    font-size: 2rem;
+    margin-top: 0.5rem
  }
  &.active {
-    background: linear-gradient(to right, #f27121, #e94057);
+    background: linear-gradient(to right, #10439F, #68D2E8);
+    box-shadow: 0px 6px 10px 0px #3b3a3a;
 
     svg {
          color: #ffff;
